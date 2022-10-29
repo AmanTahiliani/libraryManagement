@@ -43,3 +43,8 @@
 
 7. Enter Password 
 
+8. Finally, run the server
+
+    ```sh
+    python manage.py runserver
+    ```
