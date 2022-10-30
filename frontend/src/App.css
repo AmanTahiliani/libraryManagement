@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  background-image: url("/src/images/pic2.jpg");
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*  margin: 0;*/
+/*  box-sizing: border-box;*/
+/*  background-image: url("/src/images/pic2.jpg");*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*}*/
+
+body {
+  margin: 0;
+
+}
+button:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
