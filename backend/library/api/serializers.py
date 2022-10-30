@@ -13,21 +13,22 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    books = serializers.PrimaryKeyRelatedField(many =True, read_only =True)
+    books = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Author
-        fields = ["name","description", "books"]
+        fields = ["name", "description", "books"]
+
 
 class PublicationSerializer(serializers.Serializer):
-    books = serializers.PrimaryKeyRelatedField(many =True, read_only =True)
-    
+    books = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Publication
-        fields = ['name', 'location', 'books']
+        fields = ["name", "location", "books"]
+
 
 class BookSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Book
-        fields = ['name', 'path', 'author', 'publication']
-        
+        fields = ["name", "path", "author", "publication"]
