@@ -38,8 +38,9 @@ function NavBar() {
 
         axios.post("http://localhost:8000/upload/", uploadData)
             .then(response => {
-                if (response === 200) {
-                    //TODO: success icon
+                //TODO: not sure below if statement is necessary
+                if (response.status === 200) {
+                    alert('Successfully Uploaded New Book!');
                     setShow(false);
                 }
             })
@@ -55,7 +56,7 @@ function NavBar() {
                   console.log('Error', e.message);
                 }
                 console.log(e.config);
-                //TODO: error icon
+                alert('Failed To Upload New Book')
                 setShow(false);
             });
 
@@ -128,9 +129,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-/*
-/search/title/{}
-
-/upload/
-*/
