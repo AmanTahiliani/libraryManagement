@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Author, Publication, Book
+from api.models import Author, Book, Publication
 
 # Register your models here.
 
