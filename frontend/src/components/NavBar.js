@@ -13,10 +13,10 @@ function NavBar() {
     const handleShow = () => setShow(true);
 
     const [uploadData, setUploadData] = useState({
-        title: '',
+        name: '',
         author: '',
         publisher: '',
-        file: null
+        pdf: null
       });
     
     const updateField = e => {
@@ -29,7 +29,8 @@ function NavBar() {
     const handleFileSelect = e => {
         setUploadData({
             ...uploadData,
-            ["file"]: e.target.files[0]
+             // eslint-disable-next-line
+            ["pdf"]: e.target.files[0]
         });
     }
 

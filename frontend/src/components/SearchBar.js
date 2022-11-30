@@ -11,7 +11,7 @@ function SearchBar() {
 
     const handleSearch = e => {
         console.log(inputText);
-        axios.get("http://localhost:8000/search/title/" + inputText)
+        axios.get("http://localhost:8000/search/title/?name=" + inputText)
             .then(response => {
                 //TODO: not sure below if statement is necessary
                 if (response.status === 200) {
