@@ -26,6 +26,7 @@ class Publication(models.Model):
 def upload_to(instance, filename):
     now = timezone.now()
     base, extension = os.path.splitext(filename.lower())
+    base = base.replace(" ", "_")
     milliseconds = now.microsecond // 1000
     return f"pdfs/{base}/{now:%Y%m%d%H%M%S}{milliseconds}{extension}"
 
