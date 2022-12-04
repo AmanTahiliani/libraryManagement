@@ -3,7 +3,7 @@ from django.shortcuts import render
 from jmespath import search
 from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework.parsers import MultiPartParser
+from rest_framework.parsers import MultiPartParser, FormParser
 from api import serializers
 from api.models import Author, Publication, Book
 from rest_framework.response import Response
@@ -51,7 +51,7 @@ class PublicationDetail(generics.RetrieveAPIView):
 
 
 class BookView(APIView):
-    parser_classes = [MultiPartParser]
+    parser_classes = [MultiPartParser, FormParser]
     lookup_field = "name"
 
     def get(self, request, format=None):
@@ -61,7 +61,8 @@ class BookView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
-        serializer = serializers.BookSerializer(data=request.data)
+        data = request.data
+        serializer = serializers.BookSerializer(data=data)
         # print(serializer)
         if serializer.is_valid():
             serializer.save()
