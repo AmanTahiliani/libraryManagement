@@ -1,7 +1,6 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
 
-
 def searchInBook(fileLocation, quote):
     filepath = fileLocation
     searchKeywords = quote
