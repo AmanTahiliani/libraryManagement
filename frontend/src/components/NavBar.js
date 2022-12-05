@@ -37,7 +37,11 @@ function NavBar() {
     const handleUpload = () => {
         console.log(uploadData)
 
-        axios.post("http://localhost:8000/upload/", uploadData)
+        axios.post("http://localhost:8000/upload/", uploadData,{
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        })
             .then(response => {
                 //TODO: not sure below if statement is necessary
                 if (response.status === 200) {
@@ -82,10 +86,10 @@ function NavBar() {
                     <Form>
                         <Form.Floating className="mb-3">
                             <Form.Control
-                                id="title"
-                                name="title"
+                                id="name"
+                                name="name"
                                 type="text"
-                                value={Form.title}
+                                value={Form.name}
                                 onChange={updateField}
                             />
                             <label htmlFor="floatingInputCustom">Book Title</label>
@@ -104,10 +108,10 @@ function NavBar() {
 
                         <Form.Floating className="mb-3">
                             <Form.Control
-                                id="publisher"
-                                name="publisher"
+                                id="publication"
+                                name="publication"
                                 type="text"
-                                value={Form.publisher}
+                                value={Form.publication}
                                 onChange={updateField}
                             />
                             <label htmlFor="floatingInputCustom">Publisher</label>
