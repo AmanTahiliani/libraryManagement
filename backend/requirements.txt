@@ -3,3 +3,4 @@ djangorestframework
 black
 django-cors-headers
 pypdf2
+pypdfium2
