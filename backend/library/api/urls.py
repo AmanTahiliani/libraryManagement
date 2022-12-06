@@ -14,5 +14,5 @@ urlpatterns = [
     path("book/", views.BookView.as_view()),
     path("upload/", views.BookView.as_view()),
     path("search/title/", views.BookView.as_view()),
-    path("search/keywords", views.searchInDatabase.as_view()),
+    path("search/keywords/", views.searchInDatabase.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

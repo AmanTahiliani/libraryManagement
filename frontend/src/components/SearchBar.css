@@ -40,3 +40,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.pdfLink{
+    top: 50%;
+    left: 50%;
+    transform: translate(35%);
+}
+
+.checkbox{
+    transform: translate(1100%)
+}
+
+.checkboxText{
+    left: 100%;
+    bottom: 50%;
+    position: relative;
+    background: transparent;
+    display: inline-block;
+}

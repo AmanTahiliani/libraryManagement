@@ -94,5 +94,5 @@ class searchInDatabase(APIView):
         for book in books:
             isInBook = searchInBook(book, searchKeyword)
             if isInBook[0] == True:
-                returnDict[book] = isInBook[1]
-        return Response(returnDict)
+                #returnDict[book] = isInBook[1]
+                return Response(book)
